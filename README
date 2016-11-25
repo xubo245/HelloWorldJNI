@@ -19,9 +19,24 @@ Best regards.
 
 
 # Example of running 
+## Method 1:
+
 
      cd src/main/scala/
      scalac org/digimead/HelloWorldJNI.scala
       javah -jni org.digimead.HelloWorldJNI
       gcc -shared -I $JAVA_HOME/include -I $JAVA_HOME/include/linux -fPIC  ./org_digimead_HelloWorldJNI.c -o liborg_digimead_HelloWorldJNI.so
       java -Djava.library.path=. org.digimead.HelloWorldJNI
+
+## Method 2:
+
+  chmod 755 run.sh
+  ./run.sh
+  
+ Result:
+ 
+ hadoop@Mcnode1:~/disk2/xubo/tools/JNI/scalaJNI/HelloWorldJNI-master$ ./run.sh 
+Hello, world!
+java.library.path: .
+print One
+print Two
